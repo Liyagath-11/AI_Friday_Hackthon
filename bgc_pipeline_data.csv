@@ -1,0 +1,31 @@
+Candidate_ID,Candidate_Name,Base_Location,Role,Offer_Status,BGC_Status,Request_Received_Date,Aging_Days,SLA_Status,Dependency_Team,Risk_Level
+BGC-1001,Arjun Venkataraman,Chennai,Full Stack Developer,Accepted,Cleared,2026-04-17,21,On Track,None,Low
+BGC-1002,Priya Subramaniam,Bengaluru,Data Engineer,Accepted,Cleared,2026-04-19,19,On Track,None,Low
+BGC-1003,Karthik Raghunathan,Pune,Systems Engineer,Accepted,Cleared,2026-04-20,18,On Track,None,Low
+BGC-1004,Divya Krishnamurthy,Hyderabad,QA Analyst,Accepted,Cleared,2026-04-21,17,On Track,None,Low
+BGC-1005,Rohit Chandrasekaran,Chennai,Full Stack Developer,Accepted,Cleared,2026-04-22,16,On Track,None,Low
+BGC-1006,Sneha Balasubramanian,Bengaluru,Data Engineer,Accepted,Cleared,2026-04-23,15,On Track,None,Low
+BGC-1007,Vijay Annamalai,Pune,Systems Engineer,Accepted,Cleared,2026-04-24,14,On Track,None,Low
+BGC-1008,Lakshmi Narayanan,Hyderabad,QA Analyst,Accepted,Cleared,2026-04-25,13,On Track,None,Low
+BGC-1009,Aditya Srinivasan,Chennai,Full Stack Developer,Accepted,Cleared,2026-04-26,12,On Track,None,Low
+BGC-1010,Meenakshi Rajan,Bengaluru,Data Engineer,Accepted,Cleared,2026-04-27,11,On Track,None,Low
+BGC-1011,Suresh Iyer,Pune,Systems Engineer,Accepted,Cleared,2026-04-28,10,On Track,None,Low
+BGC-1012,Anitha Mohan,Hyderabad,Full Stack Developer,Accepted,Cleared,2026-04-29,9,On Track,None,Low
+BGC-1013,Prashanth Sundaram,Chennai,QA Analyst,Accepted,Cleared,2026-04-30,8,On Track,None,Low
+BGC-1014,Kavitha Rajendran,Bengaluru,Data Engineer,Accepted,Cleared,2026-05-01,7,On Track,None,Low
+BGC-1015,Nikhil Subramanian,Pune,Systems Engineer,Accepted,Cleared,2026-05-02,6,On Track,None,Low
+BGC-1016,Ramesh Parthasarathy,Hyderabad,Full Stack Developer,Accepted,Vendor Verification,2026-04-17,21,At Risk,BGC Vendor,Medium
+BGC-1017,Deepa Venkatesh,Chennai,QA Analyst,Pending Signature,Vendor Verification,2026-04-19,19,At Risk,BGC Vendor,Medium
+BGC-1018,Sanjay Thirumalai,Bengaluru,Data Engineer,Accepted,Vendor Verification,2026-04-20,18,At Risk,BGC Vendor,Medium
+BGC-1019,Anuradha Nair,Pune,Systems Engineer,Pending Signature,Vendor Verification,2026-04-21,17,At Risk,BGC Vendor,Medium
+BGC-1020,Harish Balakrishnan,Hyderabad,Full Stack Developer,Accepted,Vendor Verification,2026-04-22,16,At Risk,BGC Vendor,Medium
+BGC-1021,Geetha Murugan,Chennai,QA Analyst,Accepted,Vendor Verification,2026-04-23,15,At Risk,BGC Vendor,Medium
+BGC-1022,Vinod Seshadri,Bengaluru,Data Engineer,Pending Signature,Pending Candidate Upload,2026-04-27,11,At Risk,IT Provisioning,Medium
+BGC-1023,Saranya Pillai,Pune,Systems Engineer,Accepted,Pending Candidate Upload,2026-04-28,10,At Risk,IT Provisioning,Medium
+BGC-1024,Manoj Gopalakrishnan,Hyderabad,Full Stack Developer,Pending Signature,Pending Candidate Upload,2026-04-29,9,At Risk,IT Provisioning,Medium
+BGC-1025,Revathi Suresh,Chennai,Data Engineer,Accepted,Pending Candidate Upload,2026-04-30,8,At Risk,IT Provisioning,Medium
+BGC-1026,Bharath Natarajan,Bengaluru,QA Analyst,Pending Signature,Discrepancy Found,2026-04-20,18,Breached,BGC Vendor,High
+BGC-1027,Indira Venkatesan,Pune,Full Stack Developer,Accepted,Discrepancy Found,2026-04-22,16,Breached,BGC Vendor,High
+BGC-1028,Ganesh Krishnan,Hyderabad,Systems Engineer,Pending Signature,Discrepancy Found,2026-04-24,14,Breached,BGC Vendor,High
+BGC-1029,Pooja Ramaswamy,Chennai,Data Engineer,Accepted,Link Not Sent,2026-05-06,2,On Track,IT Provisioning,Low
+BGC-1030,Shankar Muthukumar,Bengaluru,QA Analyst,Pending Signature,Link Not Sent,2026-05-07,1,On Track,IT Provisioning,Low

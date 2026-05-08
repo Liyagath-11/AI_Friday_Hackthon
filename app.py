@@ -32,39 +32,58 @@ st.sidebar.caption("AI Fridays Hackathon Prototype")
 # -----------------------------------------------------------------------------
 # VIEW 1: EXECUTIVE DASHBOARD
 # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# VIEW 1: EXECUTIVE DASHBOARD
+# -----------------------------------------------------------------------------
 if page == "📊 Executive Dashboard (Ex 3 & 7)":
     st.title("Weekly Functional Status Report")
     st.markdown("### Executive Overview - BGC & Onboarding Pipeline")
     
-    # KPIs (Replace with your synthetic metrics)
-    col1, col2, col3, col4 = st.columns(4)
-    col1.metric(label="Total Candidates in Pipeline", value="142", delta="12")
-    col2.metric(label="Offers Pending Acceptance", value="28", delta="-3")
-    col3.metric(label="BGC Cleared (This Week)", value="85", delta="15%")
-    col4.metric(label="Avg. Onboarding Delay", value="4 Days", delta="-2 Days", delta_color="inverse")
-    
-    st.markdown("---")
-    
-    # Synthetic Data Table
-    st.markdown("### Aging Cases & Escalations")
-    st.info("💡 **Hackathon Tip:** Load your synthetic dataset (Exercise 3) here using `pd.read_csv('your_data.csv')`")
-    
-    # Dummy data for visualization purposes
-    dummy_data = pd.DataFrame({
-        "Candidate ID": ["C-101", "C-102", "C-103", "C-104"],
-        "Name": ["John Doe", "Jane Smith", "Alice Jones", "Bob Brown"],
-        "Status": ["Pending Vendor", "Offer Sent", "Cleared", "Pending Documents"],
-        "SLA Status": ["Breached", "On Track", "Completed", "At Risk"],
-        "Aging (Days)": [14, 2, 0, 8]
-    })
-    st.dataframe(dummy_data, use_container_width=True)
-    
-    st.markdown("---")
-    
-    # Leadership Presentation Placeholder
-    with st.expander("📈 View Leadership Presentation (Exercise 7)"):
-        st.write("Embed your Gamma.app slide deck link here, or summarize your future-state business impacts in bullet points.")
+    try:
+        # 1. Load the generated CSV file
+        # Make sure 'bgc_pipeline_data.csv' is saved in the exact same folder as app.py
+        df = pd.read_csv('bgc_pipeline_data.csv')
+        
+        # 2. Calculate dynamic metrics from the dataset
+        total_candidates = len(df)
+        offers_pending = len(df[df['Offer_Status'] == 'Pending Signature'])
+        cleared_bgc = len(df[df['BGC_Status'] == 'Cleared'])
+        avg_aging = round(df['Aging_Days'].mean(), 1)
+        
+        # 3. Display the KPIs
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric(label="Total Candidates in Pipeline", value=total_candidates)
+        col2.metric(label="Offers Pending Acceptance", value=offers_pending)
+        col3.metric(label="BGC Cleared (Total)", value=cleared_bgc)
+        col4.metric(label="Avg. Onboarding Delay", value=f"{avg_aging} Days")
+        
+        st.markdown("---")
+        
+        # 4. Interactive Data Table
+        col_title, col_filter = st.columns([3, 1])
+        with col_title:
+            st.markdown("### Aging Cases & Escalations")
+        with col_filter:
+            # Add an interactive filter to wow the evaluators
+            sla_filter = st.selectbox("Filter by SLA Status:", ["All"] + list(df['SLA_Status'].unique()))
+            
+        # Apply the filter
+        if sla_filter != "All":
+            display_df = df[df['SLA_Status'] == sla_filter]
+        else:
+            display_df = df
+            
+        # Render the dataframe (hide the ugly index numbers for a cleaner look)
+        st.dataframe(display_df, use_container_width=True, hide_index=True)
+        
+        st.markdown("---")
+        
+        # 5. Leadership Presentation Placeholder
+        with st.expander("📈 View Leadership Presentation (Exercise 7)"):
+            st.write("Embed your Gamma.app slide deck link here, or summarize your future-state business impacts in bullet points.")
 
+    except FileNotFoundError:
+        st.error("⚠️ **System Error:** Could not locate `bgc_pipeline_data.csv`. Please ensure the file is saved in the same directory as this Streamlit script.")
 # -----------------------------------------------------------------------------
 # VIEW 2: SMART EMAIL ASSISTANT
 # -----------------------------------------------------------------------------
